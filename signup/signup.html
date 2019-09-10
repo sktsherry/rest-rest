@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/fa33d1d4db.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <script src="signup.js"></script>
+    
+  </head>
+<div class="container">
+  <div class="login-container">
+            <div id="output"></div>
+            <button type="button" class="btn btn-warning btn-circle btn-xl" style="float: left" onclick="backToLoggin()"><i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="avatar"></div>
+            <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <span style="float: left"><i class="far fa-envelope"></i></span>
+                        <label style="float: left; color: goldenrod; margin-left: 8px; font-weight: bold" for="inputEmail4">Email</label>
+                        <input type="text" class="form-control" id="inputEmail4" >
+                      </div>
+                      <div class="form-group col-md-6">
+                        <span style="float: left"><i class="fab fa-airbnb"></i></span>
+                        <label style="float: left; color: goldenrod; margin-left: 8px; font-weight: bold" for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <span style="float: left"><i class="fab fa-airbnb"></i></span>
+                        <label style="float: left; color: goldenrod; margin-left: 8px; font-weight: bold" for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                    </div>
+                    <div class="form-group">
+                        <span style="float: left"><i class="fab fa-airbnb"></i></span>
+                        <label style="float: left; color: goldenrod; margin-left: 8px; font-weight: bold" for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <span style="float: left"><i class="fab fa-airbnb"></i></span>
+                        <label style="float: left; color: goldenrod; margin-left: 8px; font-weight: bold" for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <span style="float: left"><i class="fab fa-airbnb"></i></span>
+                        <label style="float: left; color: goldenrod; margin-left: 8px; font-weight: bold" for="inputState">State</label>
+                        <select id="inputState" class="form-control" style="background-color: black; border-color: goldenrod;">
+                          <option selected>Choose...</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <span style="float: left"><i class="fab fa-airbnb"></i></span>
+                        <label style="float: left; color: goldenrod; margin-left: 8px; font-weight: bold" for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+                    </div>
+                    <div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label for="agree-term" class="label-agree-term" style="color: goldenrod;"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                      </div>
+                    </div>
+                    <button class="btn btn-info btn-block login" type="reset" onclick="signUpAttempt()" style="margin-top: 36px;">Sign up</button>
+                </form>
+        </div>        
+</div>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<style>
+		#map {
+		min-height: 90vh;
+		height: 90%;
+		width: 100%;
+		margin: 0px;
+		padding: px;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #292b2c">
+   		<!-- Brand Logo -->
+   		<a class="navbar-brand" href="../index/index.html">
+    		<img src="../static/diet_dark.svg" alt="Logo" style="width:42px;">
+  		</a>
+
+  		<form class="form-inline" action="/action_page.php">
+		    <div class="input-group">
+		      	<div class="input-group-prepend">
+		        	<span class="input-group-text">
+		        		<img src="../static/diet.svg" alt="Logo" style="width: 16px;	">
+		        	</span>
+		    	</div>
+		    	<input type="text" class="form-control" placeholder="Food or Restaurant">
+		    	<button class="btn btn-warning" type="submit">Search</button>
+		    </div> 
+		</form>
+
+		<div class="mx-auto order-0">
+			<a class="navbar-brand mx-auto" href="#" style="text-align: center; color: goldenrod; font-weight: bold">
+				<!--<img src="../static/rest_logo.png" style="height:48px; width: 50px;">-->
+			</a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+    	</div>
+
+		<div class="navbar-nav ml-auto">
+			<a class="nav-link nav-item" href="../reservas/reservas.html" style="text-align: center; color: goldenrod; font-weight: bold">Meus Pedidos</a>
+			<a class="nav-link nav-item" href="../reservas/reservas.html" style="text-align: center; color: lightblue; font-weight: bold">Minhas Reservas</a>
+			<a class="nav-link nav-item" href="../reservas/reservas.html" style="text-align: center; color: brown; font-weight: bold">Minha Conta</a>
+			<a class="nav-link nav-item" href="../login/login.html" style="text-align: center; color: greenyellow; font-weight: bold">Sair</a>
+		</div>
+  		<!-- Links -->
+  		<!--
+		<ul class="navbar-nav">
+			<li class="nav-item">
+	    		<a class="nav-link" href="#">Link 1</a>
+	    	</li>
+		    <li class="nav-item">
+		    	<a class="nav-link" href="#">Link 2</a>
+		    </li>
+		    <li class="nav-item">
+		    	<a class="nav-link" href="#">Link 3</a>
+		    </li>
+		</ul> -->
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row" style="margin: 5px">
+			<!-- SIDEBAR  -->
+			<nav class="col-md-2 d-none d-md-block sidebar bg-dark" style="border-radius: 10px; padding: 10px; height: 100vh;">
+					<nav>
+						<div class="sidebar-sticky bg-dark">
+							<ul class="nav flex-column">
+								<li class="nav-item">
+								<a class="nav-link active" href="../index/index.html" style="text-align: center; color: goldenrod; font-weight: bold">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+									Home <span class="sr-only">(current)</span>
+								</a>
+								</li>
+								<!--{% for campus in campus_list %} -->
+								<li class="nav-item" style="margin:10px;">
+									<a class="nav-link" href="../restaurants/rests.html" onclick="" style="color: wheat; font-weight: bold">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+									<!--{{ campus.name }}-->
+									Restaurantes
+									</a>
+
+									<a class="nav-link" href="#" onclick="" style="color: brown; font-weight: bold">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+										<!--{{ campus.name }}-->
+									Destaque
+									</a>
+
+									<a class="nav-link" href="#" onclick="" style="color: wheat; font-weight: bold">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+										<!--{{ campus.name }}-->
+									Lorem Ipslum
+									</a>
+								</li>
+								<!-- {% endfor %} -->
+							</ul>
+						
+							<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+								<span style="text-align: center; color: goldenrod; font-weight: bold">Show on MAPS</span>
+								<!--<a class="d-flex align-items-center text-muted" href="#">-->
+								<!--  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>-->
+								<!--</a>-->
+							</h6>
+							<ul class="nav flex-column mb-2">
+								<li class="nav-item">
+								<a class="nav-link" href="#" style="text-align: center; color: wheat; font-weight: bold">
+									Filtros de Mapa
+								</a>
+								</li>
+								<li class="nav-item">
+								<a class="nav-link" href="#" style="text-align: center; color: wheat; font-weight: bold">
+									Filtros de Mapa
+								</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</nav>
+			
+			<!-- MAPS -->
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+					<div id="map" style="border-radius:20px;"></div>
+					<script>
+						function initMap() {
+							var centerMap = {lat: -22.899790755004126, lng: -43.130355067546134};
+							map = new google.maps.Map(document.getElementById('map'), {
+								zoom: 16,
+								center: centerMap,
+								//scrollwheel: false
+							});
+							// Add a marker clusterer to manage the markers.
+							//			var markerCluster = new MarkerClusterer(map, markers,
+							//			{imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+						};
+					</script>
+			<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+			</script>
+			<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ13m6kFcsd4tITh4PgU_N6rA0wJR5AMA&callback=initMap&libraries=visualization">
+			</script>
+			</main>
+
+		</div>
+	</div>
+</body>
+</html>
