@@ -3,3 +3,6 @@ body{background-color: #292b2c}
         position: relative;
         height: 100%;
     }
+.card-css:hover{
+    background-color: lightblue;
+}

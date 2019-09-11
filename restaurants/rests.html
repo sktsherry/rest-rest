@@ -5,7 +5,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="rests.css">
+        <script src="rests.js"></script>
     </head>
 
     <body>
@@ -78,7 +80,7 @@
                                                 Restaurantes
                                                 </a>
             
-                                                <a class="nav-link" href="#" onclick="" style=" color: brown; font-weight: bold">
+                                                <a class="nav-link" href="#" onclick="" style=" color: wheat; font-weight: bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                                                     <!--{{ campus.name }}-->
                                                 Destaque
@@ -116,91 +118,85 @@
                             </nav>                                              
 
                             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 bg-dark" style="border-radius: 20px; height: 100vh; overflow-y: scroll;">
-                                    <div id="map" style="border-radius:20px">
+                                    <div id="rests" style="border-radius:20px">
                                         <h3 style="text-align: center; color: goldenrod">
                                             Restaurantes
                                         </h3>
                                         <div class="card-columns" style="margin: 5px;">
-                                                <div class="card" style="min-width: 18rem; max-width: 30rem; border-radius: 70px; background-color: transparent; border-width: 3px; border-color: wheat ">
-                                                    <img src="../static/veggie_food.jpg" class="card-img-top" style="border-radius: 67px; background-color: transparent;" alt="...">
-                                                    <div class="card-body" style="color: goldenrod; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
+                                                <div class="card" id="vegan" style="min-width: 18rem; max-width: 30rem; border-radius: 70px; background-color: transparent; border-width: 3px; border-color: wheat ">
+                                                    <img src="../static/veggie_food.jpg" class="card-img-top" style="width: 100%; height: 220px; border-radius: 67px; background-color: transparent;" alt="...">
+                                                    <div class="card-body" style="color: wheat; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
                                                         <h5 class="card-title">Restaurante Vegano</h5>
                                                         <p class="card-text">                                        
                                                             Encontre os melhores Restaurantes Veganos e faça sua Reserva                            
                                                         </p>
-                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                        <a href="#" class="btn btn-primary card-body align-items-center d-flex justify-content-center" style="border-radius: 30px; margin-top: 20px;">
-                                                            Explorar
+                                                        <a onclick="handleRest('vegan')" class="btn align-items-center d-flex justify-content-center" style="background-color: wheat; border-radius: 30px; margin-top: 20px;">
+                                                            <h6 style="color: brown; font-weight: bold; font-size: 18px; padding: 8px; margin: auto">Explorar</h6>
                                                         </a>
                                                     </div>
                                                 </div>
 
                                                 <div class="card" style="min-width: 18rem; max-width: 30rem; border-radius: 70px; background-color: transparent; border-width: 3px; border-color: wheat ">
-                                                    <img src="../static/japanese_food.jpg" class="card-img-top" style="border-radius: 67px; background-color: transparent;" alt="...">
-                                                    <div class="card-body" style="color: goldenrod; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
+                                                    <img src="../static/japanese_food.jpg" class="card-img-top" style="width: 100%; height: 220px; border-radius: 67px; background-color: transparent;" alt="...">
+                                                    <div class="card-body" style="color: wheat; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
                                                         <h5 class="card-title">Restaurante Japonês</h5>
                                                         <p class="card-text">                                        
                                                             Encontre os melhores Restaurantes de Comida Japonesa e faça sua Reserva                            
                                                         </p>
-                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                        <a href="#" class="btn btn-primary card-body align-items-center d-flex justify-content-center" style="border-radius: 30px; margin-top: 20px;">
-                                                            Explorar
+                                                        <a onclick="handleRest('japanese')" class="btn align-items-center d-flex justify-content-center" style="background-color: wheat; border-radius: 30px; margin-top: 20px;">
+                                                            <h6 style="color: brown; font-weight: bold; font-size: 18px; padding: 8px; margin: auto">Explorar</h6>
                                                         </a>
                                                     </div>
                                                 </div>
 
                                                 <div class="card" style="min-width: 18rem; max-width: 30rem; border-radius: 70px; background-color: transparent; border-width: 3px; border-color: wheat ">
-                                                    <img src="../static/churrasco_food.jpg" class="card-img-top" style="border-radius: 67px; background-color: transparent;" alt="...">
-                                                    <div class="card-body" style="color: goldenrod; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
-                                                        <h5 class="card-title">Churrascaria</h5>
+                                                    <img src="../static/churrasco_food.jpg" class="card-img-top" style="width: 100%; height: 220px; border-radius: 67px; background-color: transparent;" alt="...">
+                                                    <div class="card-body" style="color: wheat; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
+                                                        <h5 class="card-title">Churrascarias</h5>
                                                         <p class="card-text">                                        
                                                             Encontre as melhores Churrascarias e faça sua Reserva                            
                                                         </p>
-                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                        <a href="#" class="btn btn-primary card-body align-items-center d-flex justify-content-center" style="border-radius: 30px; margin-top: 20px;">
-                                                            Explorar
+                                                        <a onclick="handleRest('churrascaria')" class="btn align-items-center d-flex justify-content-center" style="background-color: wheat; border-radius: 30px; margin-top: 20px;">
+                                                            <h6 style="color: brown; font-weight: bold; font-size: 18px; padding: 8px; margin: auto">Explorar</h6>
                                                         </a>
                                                     </div>
                                                 </div>
 
                                                 <div class="card" style="min-width: 18rem; max-width: 30rem; border-radius: 70px; background-color: transparent; border-width: 3px; border-color: wheat ">
-                                                    <img src="../static/veggie_food.jpg" class="card-img-top" style="border-radius: 67px; background-color: transparent;" alt="...">
-                                                    <div class="card-body" style="color: goldenrod; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
-                                                        <h5 class="card-title">Restaurante Vegano</h5>
+                                                    <img src="../static/hamburgueria.jpeg" class="card-img-top" style="width: 100%; height: 220px; border-radius: 67px; background-color: transparent;" alt="...">
+                                                    <div class="card-body" style="color: wheat; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
+                                                        <h5 class="card-title">Hamburguerias</h5>
                                                         <p class="card-text">                                        
-                                                            Encontre os melhores Restaurantes Veganos e faça sua Reserva                            
+                                                            Encontre as melhores Hamburguerias e faça sua Reserva.
                                                         </p>
-                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                        <a href="#" class="btn btn-primary card-body align-items-center d-flex justify-content-center" style="border-radius: 30px; margin-top: 20px;">
-                                                            Explorar
+                                                        <a href="#" class="btn align-items-center d-flex justify-content-center" style="background-color: wheat; border-radius: 30px; margin-top: 20px;">
+                                                            <h6 style="color: brown; font-weight: bold; font-size: 18px; padding: 8px; margin: auto">Explorar</h6>
                                                         </a>
                                                     </div>
                                                 </div>
 
                                                 <div class="card" style="min-width: 18rem; max-width: 30rem; border-radius: 70px; background-color: transparent; border-width: 3px; border-color: wheat ">
-                                                    <img src="../static/japanese_food.jpg" class="card-img-top" style="border-radius: 67px; background-color: transparent;" alt="...">
-                                                    <div class="card-body" style="color: goldenrod; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
-                                                        <h5 class="card-title">Restaurante Japonês</h5>
+                                                    <img src="../static/chinese food.jpeg" class="card-img-top" style="width: 100%; height: 220px; border-radius: 67px; background-color: transparent;" alt="...">
+                                                    <div class="card-body" style="color: wheat; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
+                                                        <h5 class="card-title">Restaurante Chinês</h5>
                                                         <p class="card-text">                                        
-                                                            Encontre os melhores Restaurantes de Comida Japonesa e faça sua Reserva                            
+                                                            Encontre os melhores Restaurantes de comida Chinesa e faça sua Reserva.                            
                                                         </p>
-                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                        <a href="#" class="btn btn-primary card-body align-items-center d-flex justify-content-center" style="border-radius: 30px; margin-top: 20px;">
-                                                            Explorar
+                                                        <a href="#" class="btn align-items-center d-flex justify-content-center" style="background-color: wheat; border-radius: 30px; margin-top: 20px;">
+                                                            <h6 style="color: brown; font-weight: bold; font-size: 18px; padding: 8px; margin: auto">Explorar</h6>
                                                         </a>
                                                     </div>
                                                 </div>
                                             
                                                 <div class="card" style="min-width: 18rem; max-width: 30rem; border-radius: 70px; background-color: transparent; border-width: 3px; border-color: wheat ">
-                                                    <img src="../static/churrasco_food.jpg" class="card-img-top" style="border-radius: 67px; background-color: transparent;" alt="...">
-                                                    <div class="card-body" style="color: goldenrod; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
-                                                        <h5 class="card-title">Churrascaria</h5>
+                                                    <img src="../static/brazillian_food.jpeg" class="card-img-top" style="width: 100%; height: 220px; border-radius: 67px; background-color: transparent;" alt="...">
+                                                    <div class="card-body" style="color: wheat; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;">
+                                                        <h5 class="card-title">Restaurante Brasileiro</h5>
                                                         <p class="card-text">                                        
-                                                            Encontre as melhores Churrascarias e faça sua Reserva                            
+                                                            Encontre os melhores Restaurantes de comida Brasileira e faça sua reserva.                            
                                                         </p>
-                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                        <a href="#" class="btn btn-primary card-body align-items-center d-flex justify-content-center" style="border-radius: 30px; margin-top: 20px;">
-                                                            Explorar
+                                                        <a href="#" class="btn align-items-center d-flex justify-content-center" style="background-color: wheat; border-radius: 30px; margin-top: 20px;">
+                                                            <h6 style="color: brown; font-weight: bold; font-size: 18px; padding: 8px; margin: auto">Explorar</h6>
                                                         </a>
                                                     </div>
                                                 </div>                                                
