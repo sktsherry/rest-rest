@@ -1,0 +1,34 @@
+body{background-color: #292b2c}
+    html,body{
+        position: relative;
+        height: 100%;
+    }
+
+.card-css:hover{
+    background-color: wheat;
+}
+
+.map-container-6{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+.map-container-6 iframe{
+    border-radius: 50px;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }
+
+.yui3-button {
+        margin:10px 0px 10px 0px;
+        color: #fff;
+        background-color: #3476b7;
+    }
+
+.error {
+    color: red;
+}

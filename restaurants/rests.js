@@ -1,10 +1,10 @@
 var sayings = new Map();
-sayings.set("vegan", ["Restaurantes Veganos", "L'Etoille Restaurant", "L'Etoille Restaurant", "L'Etoille Restaurant", "L'Etoille Restaurant", "L'Etoille Restaurant"]);
+sayings.set("vegan", ["Restaurantes Veganos", "letoile", "letoile", "letoile", "letoile", "letoile"]);
 sayings.set("japanese", ["Restaurantes Japoneses", "Restaurante 1", "Restaurante 2"]);
 sayings.set("churrascaria", ["Churrascarias", "Churrascaria 1", "Churrascaria 2"]);
 
 var info = new Map();
-info.set("L'Etoille Restaurant", ["letoile.jpg", "L'Etoile Restaurante", "$$$$", "4.5", "413"])
+info.set("letoile", ["letoile.jpg", "L'Etoile Restaurante", "$$$$", "4.5", "413"])
 
 $("button").click(function() {
     alert(this.id);
@@ -23,9 +23,9 @@ function handleRest(rest){
         console.log(restaurant);
 
         if (restaurant != undefined ){
-            console.log("Code is here");
-            newHTML = fill_html(newHTML, restaurant);
-            console.log(newHTML);
+            //console.log("Code is here");
+            newHTML = fill_html(newHTML, restaurant, element);
+            //console.log(newHTML);
         }
 
     });
@@ -34,7 +34,7 @@ function handleRest(rest){
     $("#rests").html(newHTML);
 }
 
-function fill_html(html, rest_array){
+function fill_html(html, rest_array, element){
     html += "<div class='card' style='min-width: 18rem; max-width: 30rem; border-radius: 70px; background-color: transparent; border-width: 3px; border-color: lightblue' >";
     html += "<img src=../static/" + rest_array[0] +" class='card-img-top' style='width: 100%;height: 220px; ;border-radius: 67px; background-color: transparent;' alt='...'>";
     html += "<div class='card-body' style='color: goldenrod; background-color: transparent; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;'>"
@@ -46,6 +46,7 @@ function fill_html(html, rest_array){
     html += "<li class='list-inline-item mr-0'><i class='fa fa-star checked'> </i></li>";
     html += "<li class='list-inline-item'><i class='fas fa-star-half-alt amber-text'></i></li>";
     html += "<li class='list-inline-item'><p class='text-muted'>"+rest_array[3] + " " + rest_array[4] +"</p></li>";
+    html += "<a href='#'' id='"+ element +"' onClick='schedule(this)' class='btn btn-primary card-body align-items-center d-flex justify-content-center' style='border-radius: 30px; margin-top: 20px;'>Reservar</a>"
 
     html += "</ul>";
     html += "</div>";
@@ -53,4 +54,8 @@ function fill_html(html, rest_array){
     html += "</div>";
 
     return html;
+}
+
+function schedule(el){
+    window.location.href = "./reservar/reservar.html?"+el.id;
 }
